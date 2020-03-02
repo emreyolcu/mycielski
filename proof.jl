@@ -51,87 +51,80 @@ function addblocked(m)
     end
 end
 
-function addtemp(m)
+function addpr(m)
+    global equiv
     v = nv[m - 1]
     s = 0
     for i = m:(k - 1)
         s += nv[i]
     end
     w = nv[m] + s
+
     for i = (s + 1):(s + v)
         for c = 1:nc
             for d = 1:nc
                 if c == d
                     continue
                 end
-                push!(delete[m], ((-index(v + i, d), -index(i, c), index(w, c)), (-index(v + i, d), index(v + i, c), index(i, c), -index(w, c))))
+                witness = [-index(v + i, d), index(v + i, c), index(i, c), -index(w, c)]
+                for h in findnodes(v + i)
+                    append!(witness, (-index(h, d), index(h, c)))
+                end
+                println("-$(index(v + i, d)) -$(index(i, c)) $(index(w, c)) " * join(witness, " ") * " 0")
             end
         end
     end
 
-    for e in edges[m - 1]
+    for i = (s + 1):(s + v)
         for c = 1:nc
             for d = 1:nc
                 if c == d
                     continue
                 end
-                push!(delete[m], ((-index(e[1] + s + v, c), -index(e[2] + s + v, c), -index(e[1] + s, d)), ()))
+                witness = [-(index(i, d)), (index(v + i, c)), (index(i, c))]
+                for h in findnodes(i)
+                    append!(witness, (-index(h, d), index(h, c)))
+                end
+                println("-$(index(i, d)) -$(index(v + i, c)) " * join(witness, " ") * " 0")
             end
         end
-    end
-
-    for cl in delete[m]
-        println(join([cl[1]..., cl[2]...], " ") * " 0")
-    end
-end
-
-function addedges(m)
-    v = nv[m - 1]
-    for i = m:(k - 1)
-        v += nv[i]
-    end
-    for e in edges[m - 1]
-        for c in 1:nc
-            println("-$(index(e[1] + v, c)) -$(index(e[2] + v, c)) 0")
+        if !(v + i in keys(equiv))
+            equiv[v + i] = []
         end
+        push!(equiv[v + i], i)
     end
 end
 
-function deletetemp(m)
-    for cl in delete[m]
-        println("d " * join(cl[1], " ") * " 0")
-    end
-end
-
-function deletecross(m)
-    v = 0
-    for i = m:(k - 1)
-        v += nv[i]
-    end
-    for e in cross[m]
-        for c = 1:nc
-            println("d -$(index(e[1] + v, c)) -$(index(e[2] + v, c)) 0")
+function findnodes(i)
+    global equiv
+    if !(i in keys(equiv))
+        return []
+    else
+        nodes = []
+        for j in equiv[i]
+            push!(nodes, j)
+            append!(nodes, findnodes(j))
         end
+        return nodes
     end
 end
 
 function addclique(m)
     clique = collect((nv[m] - m + 1):(nv[m]))
 
-    for e in w_edges[m]
-        if !(e[1] in clique) || !(e[2] in clique)
-            for c = 1:nc
-                println("d -$(index(e[1], c)) -$(index(e[2], c)) 0")
-            end
-        end
-    end
-
     for i = 1:(m - 1)
         cc = nc - i + 1
         l = clique[end - i + 1]
         for x in clique[1:end - i]
             for c in 1:(cc - 1)
-                println("-$(index(x, cc)) -$(index(l, c)) -$(index(x, cc)) -$(index(l, c)) $(index(x, c)) $(index(l, cc)) 0")
+                witness = [-(index(x, cc)), -(index(l, c)), (index(x, c)), (index(l, cc))]
+                for h in findnodes(x)
+                    append!(witness, (-index(h, cc), index(h, c)))
+                end
+                for h in findnodes(l)
+                    append!(witness, (-index(h, c), index(h, cc)))
+                end
+                println("-$(index(x, cc)) -$(index(l, c)) " * join(witness, " ") * " 0")
             end
             println("-$(index(x, cc)) 0")
         end
@@ -145,16 +138,14 @@ function proof(m)
     elseif m == 2
         addclique(k)
     else
-        addtemp(m)
-        addedges(m)
-        deletetemp(m)
-        deletecross(m)
+        addpr(m)
+
         proof(m - 1)
     end
 end
 
 function main(args)
-    global k, nc, nv, edges, cross, w_edges, delete
+    global k, nc, nv, edges, cross, w_edges, equiv
 
     k = parse(Int, args[1])
     nc = parse(Int, args[2])
@@ -164,7 +155,7 @@ function main(args)
     edges = [[] for _ = 1:k]
     cross = [[] for _ = 1:k]
     w_edges = [[] for _ = 1:k]
-    delete = [[] for _ = 1:k]
+    equiv = Dict()
 
     graph(k)
     addblocked(k)

@@ -3,7 +3,7 @@ Mycielski graph formulas, PR proofs, and the code accompanying [our paper](https
 
 ## Contents
 - `cnf/` includes the formulas. `Mk.cnf` and `Mk+.cnf` encode the colorability of Mₖ with k-1 colors and k colors, respectively.
-- `proof/` includes the PR proofs. `Mk.pr` and `Mk-d.pr` are with and without deletion, respectively.
+- `proof/` includes the PR proofs. `Mk.dpr` and `Mk.pr` are with and without deletion, respectively.
 - `partial/` includes the formulas extended with clauses from parts of the proofs as described in the paper.
 - `incr/` includes the code for the experiments described in Section 5.3 of the paper.
 - `icadical/` includes a modified version of CaDiCaL for incremental SAT solving. Thanks to Armin Biere for his implementation.

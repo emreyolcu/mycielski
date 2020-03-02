@@ -1,0 +1,104 @@
+7
+
+Samples
+
+2000 sol/M7-.sol
+real	0m18.438s
+
+Runs
+
+-- lim: 100, p: 1
+time: 0h 0m 15.425s
+cdcl: .388
+iter: 2
+-- lim: 100, p: 12
+time: 0h 0m 5.739s
+cdcl: .871
+iter: 3
+-- lim: 100, p: 25
+time: 0h 0m 5.299s
+cdcl: .943
+iter: 4
+-- lim: 100, p: 50
+time: 0h 0m 6.260s
+cdcl: .798
+iter: 4
+------------------------------------
+8
+
+Samples
+
+2000 sol/M8-.sol
+real	2m14.951s
+
+Runs
+
+-- lim: 100, p: 1
+time: 0h 2m 50.343s
+cdcl: .117
+iter: 2
+-- lim: 100, p: 12
+time: 0h 0m 44.404s
+cdcl: .427
+iter: 4
+-- lim: 100, p: 25
+time: 0h 0m 30.590s
+cdcl: .653
+iter: 4
+-- lim: 100, p: 50
+time: 0h 0m 33.453s
+cdcl: .597
+iter: 5
+------------------------------------
+9
+
+Samples
+
+3000 sol/M9-.sol
+real	10m37.300s
+
+Runs
+
+-- lim: 100, p: 1
+time: 0h 38m 39.932s
+cdcl: .029
+iter: 2
+-- lim: 100, p: 12
+time: 0h 7m 4.116s
+cdcl: .136
+iter: 5
+-- lim: 100, p: 25
+time: 0h 5m 22.100s
+cdcl: .235
+iter: 6
+-- lim: 100, p: 50
+time: 0h 3m 25.915s
+cdcl: .257
+iter: 5
+------------------------------------
+10
+
+Samples
+
+3000 sol/M10-.sol
+real	35m18.099s
+
+Runs
+
+-- lim: 100, p: 1
+time: 11h 37m 20.469s
+cdcl: .003
+iter: 3
+-- lim: 100, p: 12
+time: 1h 54m 44.335s
+cdcl: .038
+iter: 6
+-- lim: 100, p: 25
+time: 1h 7m 10.767s
+cdcl: .332
+iter: 5
+-- lim: 100, p: 50
+time: 0h 42m 18.337s
+cdcl: .324
+iter: 6
+------------------------------------

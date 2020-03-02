@@ -1,0 +1,111 @@
+args: ../partial/bp/M10.cnf cubes/M10.cubes 100 50 25
+iteration: 0
+running icadical
+lim: 100
+refuted: 94248, progress: 94248/568214
+
+iteration: 1
+running icadical
+lim: 100
+refuted: 74827, progress: 169075/568214
+
+iteration: 2
+running icadical
+lim: 100
+refuted: 71186, progress: 240261/568214
+
+iteration: 3
+running icadical
+lim: 100
+refuted: 107923, progress: 348184/568214
+
+iteration: 4
+running icadical
+lim: 100
+refuted: 46905, progress: 395089/568214
+
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL Radically Simplified CDCL SAT Solver
+c Copyright (c) 2016-2019 Armin Biere, JKU Linz
+c 
+c Version 1.2.1 92d72896c49b30ad2d50c8e1061ca0681cd23e60
+c g++ (GCC) 4.8.5 20150623 (Red Hat 4.8.5-39) -Wall -Wextra -O3 -DNDEBUG -std=c++0x
+c Thu Jan 30 22:37:32 EST 2020 Linux lov6.int.autonlab.org 3.10.0-1062.4.1.el7.x86_64 x86_64
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '<stdin>' (use '-h' for a list of common options)
+c found 'p cnf 6903 282647' header
+c parsed 677736 clauses in 0.94 seconds process time
+c disconnecting from '<stdin>'
+c after reading 11845103 bytes 11.3 MB
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --report=false                 (different from default 'true')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         7.10   59.12% search
+c         4.91   40.88% simplify
+c         3.40   28.32% unstable
+c         3.39   28.20% stable
+c         1.56   13.01% elim
+c         1.34   11.16% probe
+c         1.04    8.67% vivify
+c         0.59    4.88% subsume
+c         0.31    2.57% walk
+c         0.14    1.16% ternary
+c         0.00    0.02% lucky
+c   =================================
+c        12.01   92.75% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:              2280         5.42 %  of conflicts
+c conflicts:                 42059      3503.13    per second
+c decisions:                 47035      3917.58    per second
+c eliminated:                  759        11.00 %  of all variables
+c fixed:                      2041        29.57 %  of all variables
+c learned:                   41856        99.52 %  per conflict
+c minimized:                244744        15.87 %  learned literals
+c propagations:           33693277         2.81 M  per second
+c reduced:                   14585        34.68 %  per conflict
+c rephased:                      8      5257.38    interval
+c restarts:                   1605        26.20    interval
+c stabilizing:                   3        50.07 %  of conflicts
+c subsumed:                  11333         0.66 %  of all clauses
+c strengthened:              10363         0.60 %  of all clauses
+c vivified:                    930         0.05 %  of all clauses
+c walked:                        1     42059.00    interval
+c weakened:                   6831         2.78    average size
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:        12.94    seconds
+c total real time since initialization:           13.39    seconds
+c maximum resident set size of process:          108.20    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20
+
+real	67m10.767s
+user	1557m29.148s
+sys	6m20.033s

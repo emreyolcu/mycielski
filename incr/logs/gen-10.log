@@ -1,0 +1,22 @@
+args: 10 10 50 20 50
+M10-
+iteration: 0
+prev remaining: 0
+filtered: -595995
+remaining: 595995
+
+iteration: 1
+prev remaining: 595995
+filtered: 25548
+remaining: 570447
+
+iteration: 2
+prev remaining: 570447
+filtered: 2233
+remaining: 568214
+
+3000 sol/M10-.sol
+
+real	35m18.099s
+user	519m48.511s
+sys	2m58.352s

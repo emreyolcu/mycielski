@@ -1,0 +1,22 @@
+args: 9 9 50 20 50
+M9-
+iteration: 0
+prev remaining: 0
+filtered: -151089
+remaining: 151089
+
+iteration: 1
+prev remaining: 151089
+filtered: 2397
+remaining: 148692
+
+iteration: 2
+prev remaining: 148692
+filtered: 68
+remaining: 148624
+
+3000 sol/M9-.sol
+
+real	10m37.300s
+user	153m32.869s
+sys	1m21.688s

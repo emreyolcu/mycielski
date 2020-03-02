@@ -1,0 +1,17 @@
+args: 7 7 50 20 50
+M7-
+iteration: 0
+prev remaining: 0
+filtered: -9714
+remaining: 9714
+
+iteration: 1
+prev remaining: 9714
+filtered: 39
+remaining: 9675
+
+2000 sol/M7-.sol
+
+real	0m18.438s
+user	3m23.254s
+sys	0m18.294s

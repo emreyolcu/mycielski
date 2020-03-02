@@ -1,0 +1,17 @@
+args: 8 8 50 20 50
+M8-
+iteration: 0
+prev remaining: 0
+filtered: -38444
+remaining: 38444
+
+iteration: 1
+prev remaining: 38444
+filtered: 189
+remaining: 38255
+
+2000 sol/M8-.sol
+
+real	2m14.951s
+user	35m21.757s
+sys	0m32.030s

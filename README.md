@@ -6,6 +6,7 @@ Mycielski graph formulas, PR proofs, and the code accompanying [our paper](https
 - `proof/` includes the PR proofs. `Mk.dpr` and `Mk.pr` are with and without deletion, respectively.
 - `partial/` includes the formulas extended with clauses from parts of the proofs as described in the paper.
 - `incr/` includes the code for the experiments described in Section 5.3 of the paper.
+- `incr/icnf/` includes the MYCₖ+PR formulas with negations of the clauses in R2 included as assumptions for incremental solving.
 - `icadical/` includes a modified version of CaDiCaL for incremental SAT solving. Thanks to Armin Biere for his implementation.
 
 ## Instructions

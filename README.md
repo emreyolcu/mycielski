@@ -1,5 +1,5 @@
 # Mycielski
-Mycielski graph formulas, PR proofs, and the code accompanying the SAT 2020 paper [*Mycielski graphs and PR proofs*](https://www.cs.cmu.edu/~eyolcu/papers/mycielski-graphs-pr-proofs.pdf).
+Mycielski graph formulas, PR proofs, and the code accompanying the SAT 2020 paper [*Mycielski graphs and PR proofs*](https://www.cs.cmu.edu/~eyolcu/research/mycielski-graphs-pr-proofs.pdf).
 
 ## Contents
 - `cnf/` includes the formulas. `Mk.cnf` and `Mk+.cnf` encode the colorability of Mₖ with k-1 colors and k colors, respectively.
